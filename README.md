@@ -3,7 +3,7 @@
 A simple script for pass typing or copying.  
 The script is used to create a list of pass entries for dmenu-compatible launcher,user can select a pass entry to copy or type.  
 It is recommended to use the script with wofi(or any launcher compatible with dmenu), wl-clipboard (or xclip for x11) and wtyep (or xte for x11).  
-If selected file has the suffix '.otp.gpg', it will be considered as an otp url.  
+If selected file has the suffix `.otp.gpg`, it will be considered as an otp url.  
 
 ```
 Usage: passmenu.sh [options]
