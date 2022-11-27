@@ -36,6 +36,14 @@ while true; do
 	esac
 done
 
+if [ "${HELPISSET}" -eq 1 ]; then
+	_usage
+fi
+
+if [ "${VERSIONISSET}" -eq 1 ]; then
+	_version
+fi
+
 if ! command -v "${MENU_COMMAND%% *}"; then
 	printf "The command used for creating menu is unavailable.Exiting.\n"
 	exit
@@ -45,13 +53,6 @@ if ! command -v "${TYPE_COMMAND%% *}"; then
 	exit
 fi
 
-if [ "${HELPISSET}" -eq 1 ]; then
-	_usage
-fi
-
-if [ "${VERSIONISSET}" -eq 1 ]; then
-	_version
-fi
 
 cd ${PASSWORD_STORE_DIR:-${HOME}/.password-store/}
 SELECT="$(find . -name "*.gpg"|cut -d'/' -f2-| ${MENU_COMMAND})"
